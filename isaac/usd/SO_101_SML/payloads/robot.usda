@@ -1,0 +1,149 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "SO_101_SML"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "SO_101_SML" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </SO_101_SML/Physics/root_joint>,
+        </SO_101_SML/Physics/shoulder_pan>,
+        </SO_101_SML/Physics/shoulder_lift>,
+        </SO_101_SML/Physics/elbow_flex>,
+        </SO_101_SML/Physics/wrist_flex>,
+        </SO_101_SML/Physics/wrist_roll>,
+        </SO_101_SML/Physics/gripper_frame_link_frame>,
+        </SO_101_SML/Physics/gripper>,
+        </SO_101_SML/Physics/jaw_tip_frame>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </SO_101_SML/Geometry/base_arm>,
+        </SO_101_SML/Geometry/base_arm/part_31>,
+        </SO_101_SML/Geometry/base_arm/part_31/part_37>,
+        </SO_101_SML/Geometry/base_arm/part_31/part_37/part_42>,
+        </SO_101_SML/Geometry/base_arm/part_31/part_37/part_42/part_63>,
+        </SO_101_SML/Geometry/base_arm/part_31/part_37/part_42/part_63/part_56>,
+        </SO_101_SML/Geometry/base_arm/part_31/part_37/part_42/part_63/part_56/gripper_frame_link>,
+        </SO_101_SML/Geometry/base_arm/part_31/part_37/part_42/part_63/part_56/moving_jaw_so101_v1>,
+        </SO_101_SML/Geometry/base_arm/part_31/part_37/part_42/part_63/part_56/moving_jaw_so101_v1/jaw_tip>,
+    ]
+    token isaac:robotType = "Manipulator"
+
+    over "Geometry"
+    {
+        over "base_arm" (
+            prepend apiSchemas = ["IsaacLinkAPI"]
+        )
+        {
+            over "part_31" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "part_37" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "part_42" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "part_63" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "part_56" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "moving_jaw_so101_v1" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "jaw_tip" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                    }
+                                }
+
+                                over "gripper_frame_link" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "root_joint" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "gripper_frame_link_frame" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "jaw_tip_frame" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "gripper" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "wrist_roll" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "wrist_flex" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "elbow_flex" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "shoulder_lift" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "shoulder_pan" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+    }
+}
+

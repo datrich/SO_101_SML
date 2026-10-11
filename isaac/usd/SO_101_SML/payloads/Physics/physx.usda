@@ -1,0 +1,88 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "SO_101_SML"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    subLayers = [
+        @./physics.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "SO_101_SML"
+{
+    over "Physics"
+    {
+        over "gripper" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxJointAxisAPI:angular"]
+        )
+        {
+            float physxJointAxis:angular:armature = 0.028
+            float physxJointAxis:angular:dynamicFrictionEffort = 0.052
+            float physxJointAxis:angular:maxJointVelocity = 572.9578
+            float physxJointAxis:angular:staticFrictionEffort = 0.052
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.010471975
+        }
+
+        over "wrist_roll" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxJointAxisAPI:angular"]
+        )
+        {
+            float physxJointAxis:angular:armature = 0.028
+            float physxJointAxis:angular:dynamicFrictionEffort = 0.052
+            float physxJointAxis:angular:maxJointVelocity = 572.9578
+            float physxJointAxis:angular:staticFrictionEffort = 0.052
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.010471975
+        }
+
+        over "wrist_flex" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxJointAxisAPI:angular"]
+        )
+        {
+            float physxJointAxis:angular:armature = 0.028
+            float physxJointAxis:angular:dynamicFrictionEffort = 0.052
+            float physxJointAxis:angular:maxJointVelocity = 572.9578
+            float physxJointAxis:angular:staticFrictionEffort = 0.052
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.010471975
+        }
+
+        over "elbow_flex" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxJointAxisAPI:angular"]
+        )
+        {
+            float physxJointAxis:angular:armature = 0.028
+            float physxJointAxis:angular:dynamicFrictionEffort = 0.052
+            float physxJointAxis:angular:maxJointVelocity = 572.9578
+            float physxJointAxis:angular:staticFrictionEffort = 0.052
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.010471975
+        }
+
+        over "shoulder_lift" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxJointAxisAPI:angular"]
+        )
+        {
+            float physxJointAxis:angular:armature = 0.028
+            float physxJointAxis:angular:dynamicFrictionEffort = 0.052
+            float physxJointAxis:angular:maxJointVelocity = 572.9578
+            float physxJointAxis:angular:staticFrictionEffort = 0.052
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.010471975
+        }
+
+        over "shoulder_pan" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxJointAxisAPI:angular"]
+        )
+        {
+            float physxJointAxis:angular:armature = 0.028
+            float physxJointAxis:angular:dynamicFrictionEffort = 0.052
+            float physxJointAxis:angular:maxJointVelocity = 572.9578
+            float physxJointAxis:angular:staticFrictionEffort = 0.052
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.010471975
+        }
+    }
+}
+

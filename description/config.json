@@ -1,0 +1,68 @@
+// onshape-to-robot v1.8.x config — file này hỗ trợ comment (commentjson).
+// Chạy từ thư mục gốc repo: ./export.sh
+{
+    // ===== BẮT BUỘC =====
+    // URL của Assembly trên Onshape: mở tab Assembly rồi copy nguyên URL trên trình duyệt.
+    // Dạng: https://cad.onshape.com/documents/<document_id>/w/<workspace_id>/e/<element_id>
+    // (dùng /v/<version_id>/ thay vì /w/ nếu muốn khóa theo một Version cố định)
+    "url": "https://cad.onshape.com/documents/81d501d7738cf1f7abdf9ff7/w/f9e36f0d17398680b4fec150/e/403f18663d25766094b60da5",
+
+    // Định dạng xuất: "urdf" | "sdf" | "mujoco"
+    "output_format": "urdf",
+
+    // ===== THÔNG TIN ROBOT =====
+    // Tên robot trong file xuất (mặc định = tên thư mục này)
+    "robot_name": "SO_101_SML",
+    // Tên file xuất (không đuôi) -> SO_101_SML.urdf
+    "output_filename": "SO_101_SML",
+    // Thư mục chứa mesh STL
+    "assets_directory": "assets",
+
+    // Tên tab Assembly — chỉ cần khi KHÔNG ghi element_id trong url
+    // "assembly_name": "Assembly 2",
+
+    // Configuration của Onshape (nếu assembly dùng Configurations)
+    // "configuration": {"Length": "50 mm"},
+
+    // ===== ROS 2 =====
+    // Nếu đặt, mesh được tham chiếu dạng package://<package_name>/assets/... (dùng trong ROS 2 package)
+    // "package_name": "so101_sml_description",
+
+    // ===== KHỚP (JOINT) =====
+    // Bỏ qua giới hạn khớp đặt trong Onshape
+    "ignore_limits": false,
+    // Thuộc tính riêng cho từng khớp (tên khớp = tên mate "dof_xxx" bỏ tiền tố dof_). "*" áp cho tất cả.
+    // SO-101 gốc: servo STS3215, effort = forcerange 2.94 N·m (so101_new_calib.xml), velocity = 10 rad/s (so101_new_calib.urdf)
+    // damping/friction + khối lượng được bổ sung bởi ../so101_physics.py (post_import_commands bên dưới)
+    "joint_properties": {
+        "*": {"max_effort": 2.94, "max_velocity": 10.0}
+        // "shoulder_pan": {"max_effort": 2.94}
+    },
+
+    // ===== HÌNH HỌC / VA CHẠM =====
+    // Gộp tất cả part của một link thành 1 STL
+    "merge_stls": false,
+    // Giảm số tam giác STL (cần cài meshlab/pymeshlab)
+    "simplify_stls": false,
+    // "max_stl_size": 3,
+    // Không xuất mesh va chạm (chỉ visual)
+    "no_collision_meshes": false,
+    // Bỏ qua các part theo tên, ví dụ ốc vít
+    "ignore": {
+        // "screw*": "all",
+        // "cover": "collision"
+    },
+
+    // ===== KHÁC =====
+    // Vẽ các frame (mate tên "frame_xxx") ra file xuất
+    "draw_frames": false,
+    // Thêm link base rỗng (hữu ích cho một số simulator)
+    "add_dummy_base_link": false,
+    // Bỏ khối lượng/quán tính (chỉ để hiển thị)
+    "no_dynamics": false,
+
+    // Lệnh chạy sau khi xuất (cwd = gốc repo, "python" = env onshape, do export.sh đặt PATH): bổ sung vật lý SO-101 gốc (khối lượng, quán tính, damping, friction, transmission)
+    "post_import_commands": [
+        "python scripts/so101_physics.py description/SO_101_SML.urdf"
+    ]
+}

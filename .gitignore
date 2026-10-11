@@ -1,0 +1,13 @@
+# Secrets
+.env
+
+# onshape-to-robot cache / intermediates
+*.pkl
+description/robot.pkl
+
+# Isaac Sim outputs
+isaac/test_out/
+*.log
+
+__pycache__/
+*.pyc

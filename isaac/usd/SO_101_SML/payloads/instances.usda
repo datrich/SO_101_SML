@@ -1,0 +1,1275 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+def Scope "Instances"
+{
+    def Xform "part_30" (
+        prepend references = @./geometries.usd@</Geometries/part_30>
+    )
+    {
+        over "part_30" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_30/VisualMaterials/part_30_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_30_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_30_1" (
+        prepend references = @./geometries.usd@</Geometries/part_30>
+    )
+    {
+        over "part_30" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_28" (
+        prepend references = @./geometries.usd@</Geometries/part_28>
+    )
+    {
+        over "part_28" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_28/VisualMaterials/part_28_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_28_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_28_1" (
+        prepend references = @./geometries.usd@</Geometries/part_28>
+    )
+    {
+        over "part_28" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "base_arm_servo_cap" (
+        prepend references = @./geometries.usd@</Geometries/base_arm_servo_cap>
+    )
+    {
+        over "base_arm_servo_cap" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/base_arm_servo_cap/VisualMaterials/base_arm_servo_cap_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "base_arm_servo_cap_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_servo_cap_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "base_arm_servo_cap_1" (
+        prepend references = @./geometries.usd@</Geometries/base_arm_servo_cap>
+    )
+    {
+        over "base_arm_servo_cap" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_24" (
+        prepend references = @./geometries.usd@</Geometries/part_24>
+    )
+    {
+        over "part_24" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_24/VisualMaterials/part_24_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_24_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_24_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_24_1" (
+        prepend references = @./geometries.usd@</Geometries/part_24>
+    )
+    {
+        over "part_24" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "base_arm_servo_case" (
+        prepend references = @./geometries.usd@</Geometries/base_arm_servo_case>
+    )
+    {
+        over "base_arm_servo_case" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/base_arm_servo_case/VisualMaterials/base_arm_servo_case_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "base_arm_servo_case_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_servo_case_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "base_arm_servo_case_1" (
+        prepend references = @./geometries.usd@</Geometries/base_arm_servo_case>
+    )
+    {
+        over "base_arm_servo_case" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "base_arm" (
+        prepend references = @./geometries.usd@</Geometries/base_arm>
+    )
+    {
+        over "base_arm" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/base_arm/VisualMaterials/base_arm_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "base_arm_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "base_arm_1" (
+        prepend references = @./geometries.usd@</Geometries/base_arm>
+    )
+    {
+        over "base_arm" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_26" (
+        prepend references = @./geometries.usd@</Geometries/part_26>
+    )
+    {
+        over "part_26" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_26/VisualMaterials/part_26_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_26_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_26_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_26_1" (
+        prepend references = @./geometries.usd@</Geometries/part_26>
+    )
+    {
+        over "part_26" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_35" (
+        prepend references = @./geometries.usd@</Geometries/part_35>
+    )
+    {
+        over "part_35" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_35/VisualMaterials/part_35_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_35_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_35_1" (
+        prepend references = @./geometries.usd@</Geometries/part_35>
+    )
+    {
+        over "part_35" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_36" (
+        prepend references = @./geometries.usd@</Geometries/part_36>
+    )
+    {
+        over "part_36" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_36/VisualMaterials/part_36_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_36_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_36_1" (
+        prepend references = @./geometries.usd@</Geometries/part_36>
+    )
+    {
+        over "part_36" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_34" (
+        prepend references = @./geometries.usd@</Geometries/part_34>
+    )
+    {
+        over "part_34" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_34/VisualMaterials/part_34_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_34_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_servo_case_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_34_1" (
+        prepend references = @./geometries.usd@</Geometries/part_34>
+    )
+    {
+        over "part_34" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_33" (
+        prepend references = @./geometries.usd@</Geometries/part_33>
+    )
+    {
+        over "part_33" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_33/VisualMaterials/part_33_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_33_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_servo_cap_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_33_1" (
+        prepend references = @./geometries.usd@</Geometries/part_33>
+    )
+    {
+        over "part_33" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_32" (
+        prepend references = @./geometries.usd@</Geometries/part_32>
+    )
+    {
+        over "part_32" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_32/VisualMaterials/part_32_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_32_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_26_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_32_1" (
+        prepend references = @./geometries.usd@</Geometries/part_32>
+    )
+    {
+        over "part_32" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_31" (
+        prepend references = @./geometries.usd@</Geometries/part_31>
+    )
+    {
+        over "part_31" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_31/VisualMaterials/part_31_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_31_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_24_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_31_1" (
+        prepend references = @./geometries.usd@</Geometries/part_31>
+    )
+    {
+        over "part_31" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_37" (
+        prepend references = @./geometries.usd@</Geometries/part_37>
+    )
+    {
+        over "part_37" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_37/VisualMaterials/part_37_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_37_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_24_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_37_1" (
+        prepend references = @./geometries.usd@</Geometries/part_37>
+    )
+    {
+        over "part_37" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_39" (
+        prepend references = @./geometries.usd@</Geometries/part_39>
+    )
+    {
+        over "part_39" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_39/VisualMaterials/part_39_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_39_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_servo_case_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_39_1" (
+        prepend references = @./geometries.usd@</Geometries/part_39>
+    )
+    {
+        over "part_39" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_40" (
+        prepend references = @./geometries.usd@</Geometries/part_40>
+    )
+    {
+        over "part_40" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_40/VisualMaterials/part_40_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_40_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_40_1" (
+        prepend references = @./geometries.usd@</Geometries/part_40>
+    )
+    {
+        over "part_40" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "under_arm_so101_v1" (
+        prepend references = @./geometries.usd@</Geometries/under_arm_so101_v1>
+    )
+    {
+        over "under_arm_so101_v1" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/under_arm_so101_v1/VisualMaterials/under_arm_so101_v1_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "under_arm_so101_v1_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "under_arm_so101_v1_1" (
+        prepend references = @./geometries.usd@</Geometries/under_arm_so101_v1>
+    )
+    {
+        over "under_arm_so101_v1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_38" (
+        prepend references = @./geometries.usd@</Geometries/part_38>
+    )
+    {
+        over "part_38" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_38/VisualMaterials/part_38_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_38_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_26_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_38_1" (
+        prepend references = @./geometries.usd@</Geometries/part_38>
+    )
+    {
+        over "part_38" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "under_arm_so101_v1__2" (
+        prepend references = @./geometries.usd@</Geometries/under_arm_so101_v1__2>
+    )
+    {
+        over "under_arm_so101_v1__2" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/under_arm_so101_v1__2/VisualMaterials/under_arm_so101_v1_2_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "under_arm_so101_v1_2_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "under_arm_so101_v1__2_1" (
+        prepend references = @./geometries.usd@</Geometries/under_arm_so101_v1__2>
+    )
+    {
+        over "under_arm_so101_v1__2" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_42" (
+        prepend references = @./geometries.usd@</Geometries/part_42>
+    )
+    {
+        over "part_42" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_42/VisualMaterials/part_42_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_42_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_24_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_42_1" (
+        prepend references = @./geometries.usd@</Geometries/part_42>
+    )
+    {
+        over "part_42" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_44" (
+        prepend references = @./geometries.usd@</Geometries/part_44>
+    )
+    {
+        over "part_44" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_44/VisualMaterials/part_44_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_44_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_servo_case_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_44_1" (
+        prepend references = @./geometries.usd@</Geometries/part_44>
+    )
+    {
+        over "part_44" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_46" (
+        prepend references = @./geometries.usd@</Geometries/part_46>
+    )
+    {
+        over "part_46" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_46/VisualMaterials/part_46_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_46_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_46_1" (
+        prepend references = @./geometries.usd@</Geometries/part_46>
+    )
+    {
+        over "part_46" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_45" (
+        prepend references = @./geometries.usd@</Geometries/part_45>
+    )
+    {
+        over "part_45" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_45/VisualMaterials/part_45_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_45_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_45_1" (
+        prepend references = @./geometries.usd@</Geometries/part_45>
+    )
+    {
+        over "part_45" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_43" (
+        prepend references = @./geometries.usd@</Geometries/part_43>
+    )
+    {
+        over "part_43" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_43/VisualMaterials/part_43_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_43_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_26_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_43_1" (
+        prepend references = @./geometries.usd@</Geometries/part_43>
+    )
+    {
+        over "part_43" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_63" (
+        prepend references = @./geometries.usd@</Geometries/part_63>
+    )
+    {
+        over "part_63" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_63/VisualMaterials/part_63_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_63_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_63_1" (
+        prepend references = @./geometries.usd@</Geometries/part_63>
+    )
+    {
+        over "part_63" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_66" (
+        prepend references = @./geometries.usd@</Geometries/part_66>
+    )
+    {
+        over "part_66" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_66/VisualMaterials/part_66_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_66_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_66_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_66_1" (
+        prepend references = @./geometries.usd@</Geometries/part_66>
+    )
+    {
+        over "part_66" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_65" (
+        prepend references = @./geometries.usd@</Geometries/part_65>
+    )
+    {
+        over "part_65" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_65/VisualMaterials/part_65_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_65_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_24_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_65_1" (
+        prepend references = @./geometries.usd@</Geometries/part_65>
+    )
+    {
+        over "part_65" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_64" (
+        prepend references = @./geometries.usd@</Geometries/part_64>
+    )
+    {
+        over "part_64" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_64/VisualMaterials/part_64_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_64_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_24_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_64_1" (
+        prepend references = @./geometries.usd@</Geometries/part_64>
+    )
+    {
+        over "part_64" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_69" (
+        prepend references = @./geometries.usd@</Geometries/part_69>
+    )
+    {
+        over "part_69" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_69/VisualMaterials/part_69_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_69_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_69_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_69_1" (
+        prepend references = @./geometries.usd@</Geometries/part_69>
+    )
+    {
+        over "part_69" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_71" (
+        prepend references = @./geometries.usd@</Geometries/part_71>
+    )
+    {
+        over "part_71" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_71/VisualMaterials/part_71_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_71_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_servo_case_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_71_1" (
+        prepend references = @./geometries.usd@</Geometries/part_71>
+    )
+    {
+        over "part_71" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_61" (
+        prepend references = @./geometries.usd@</Geometries/part_61>
+    )
+    {
+        over "part_61" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_61/VisualMaterials/part_61_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_61_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_66_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_61_1" (
+        prepend references = @./geometries.usd@</Geometries/part_61>
+    )
+    {
+        over "part_61" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_57" (
+        prepend references = @./geometries.usd@</Geometries/part_57>
+    )
+    {
+        over "part_57" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_57/VisualMaterials/part_57_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_57_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_57_1" (
+        prepend references = @./geometries.usd@</Geometries/part_57>
+    )
+    {
+        over "part_57" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_62" (
+        prepend references = @./geometries.usd@</Geometries/part_62>
+    )
+    {
+        over "part_62" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_62/VisualMaterials/part_62_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_62_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_30_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_62_1" (
+        prepend references = @./geometries.usd@</Geometries/part_62>
+    )
+    {
+        over "part_62" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "part_56" (
+        prepend references = @./geometries.usd@</Geometries/part_56>
+    )
+    {
+        over "part_56" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/part_56/VisualMaterials/part_56_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "part_56_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/part_24_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "part_56_1" (
+        prepend references = @./geometries.usd@</Geometries/part_56>
+    )
+    {
+        over "part_56" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+
+    def Xform "moving_jaw_so101_v1" (
+        prepend references = @./geometries.usd@</Geometries/moving_jaw_so101_v1>
+    )
+    {
+        over "moving_jaw_so101_v1" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/moving_jaw_so101_v1/VisualMaterials/moving_jaw_so101_v1_material>
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "moving_jaw_so101_v1_material" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/base_arm_material>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "moving_jaw_so101_v1_1" (
+        prepend references = @./geometries.usd@</Geometries/moving_jaw_so101_v1>
+    )
+    {
+        over "moving_jaw_so101_v1" (
+            apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+        )
+        {
+            token physics:approximation = "convexDecomposition"
+            token purpose = "guide"
+        }
+    }
+}
+
