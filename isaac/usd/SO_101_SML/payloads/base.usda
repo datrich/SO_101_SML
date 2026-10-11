@@ -4,7 +4,7 @@
         string creator = "URDF USD Converter v0.3.2"
     }
     defaultPrim = "SO_101_SML"
-    doc = """Generated from Composed Stage of root layer /home/lablee/SO_101_SML/isaac/usd/SO_101_SML/payloads/base.usd
+    doc = """Generated from Composed Stage of root layer ./isaac/usd/SO_101_SML/payloads/base.usd
 """
     endTimeCode = 1000000
     kilogramsPerUnit = 1
