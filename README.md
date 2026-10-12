@@ -22,6 +22,8 @@ SO_101_SML/
 ├── isaac/
 │   ├── import_so101.py       # URDF -> USD (Isaac Sim 6.1), convex decomposition, thông số PhysX
 │   ├── test_so101.py         # kiểm thử: đứng vững, bám target, collision, chụp ảnh
+│   ├── pick_place_cube.py    # pick & place cube 2 cm (headless) + quay video 4 góc
+│   ├── so101_kinematics.py   # FK/IK số (numpy) đọc trực tiếp từ URDF
 │   └── usd/SO_101_SML/       # USD đã import sẵn, mở thẳng trong Isaac Sim
 └── docs/images/              # ảnh chụp từ test_so101.py
 ```
@@ -172,6 +174,46 @@ export LD_LIBRARY_PATH=<ISAAC_SIM_DIR>/exts/isaacsim.pip.nv/pip_prebundle/nvidia
 | ![](docs/images/01_home.png) | ![](docs/images/02_pose.png) | ![](docs/images/03_collision.png) |
 
 ---
+
+## 3. Pick & place cube 2 cm
+
+```bash
+cd SO_101_SML
+<ISAAC_SIM_DIR>/python.sh isaac/pick_place_cube.py --gpu 0 --out isaac/test_out/pick_place [--ffmpeg /đường/dẫn/ffmpeg]
+# thêm --no-tuning để chạy với thông số PhysX mặc định (so sánh)
+```
+
+Script chạy headless. Robot gắp khối cube 2 cm (10 g) trên sàn tại (0, −0.26) m, rồi đặt sang (0.15, −0.21) m.
+
+- **Điều khiển:**
+  - IK số trong `so101_kinematics.py`, đọc trực tiếp từ URDF, cho 5 khớp cánh tay. FK khớp với pose thực trong Isaac, sai khác dưới 0.05 mm.
+  - Gắp thẳng từ trên xuống; hạ và nâng theo đường thẳng (MoveL); quỹ đạo khớp nội suy min-jerk.
+- **Servo giữ nguyên thông số thật** (kp 998.22, effort 2.94 N·m). Hàm kẹp mở 30°, khi đóng thì đặt target 0° và servo ép cube với lực tối đa, giống servo thật.
+- **Tinh chỉnh gắp**, theo [robotiq/isaacsim_assets › GRIPPER_SIMULATION_GUIDE.md](https://github.com/robotiq/isaacsim_assets/blob/main/grippers/GRIPPER_SIMULATION_GUIDE.md) §3:
+  - Cube: contact/rest offset 2 / 0.5 mm, `linearDamping` 0.1, solver iterations 16/4, speculative CCD, ma sát xoắn (`torsionalPatchRadius` 5 mm).
+  - Vật liệu ma sát: hàm kẹp 1.0/0.9 (giả định có đệm TPU), cube 0.8/0.7 (PLA).
+  - Articulation 64/4 iterations; hai khâu hàm kẹp 64/8.
+  - Physics scene: 120 Hz, CPU, `enableStabilization`.
+- **Video** `pick_place_cube.mp4` (lưới 2×2, 1920×1080):
+  - Toàn cảnh.
+  - Chính diện tại điểm gắp.
+  - Chính diện tại điểm đặt.
+  - Camera gắn theo gripper, nhìn thẳng vào khe kẹp.
+  - Kèm theo là ảnh PNG ở các bước kẹp, mang và nhả. Video được ghép bằng `ffmpeg`.
+
+### Kết quả (Isaac Sim 6.1, headless)
+
+| Chỉ số | Giá trị |
+|---|---|
+| Sai số vị trí đặt | 0.81 mm, nghiêng 0.4° |
+| Trượt tối đa của cube trong tay khi mang | 0.27 mm |
+| Rung khi giữ (độ lệch chuẩn) | 0.036 mm |
+| Góc hàm kẹp khi giữ cube | 15.4° |
+
+### Lưu ý hình học
+
+- **Đầu hàm nhô quá frame `gripper_frame_link`:** đầu hàm cố định nhô thêm 6.3 mm qua gốc của frame này theo hướng ngón. TCP trong script đã tính phần này: tâm cube ở (0, −1.7, 11.5) mm trong khung `gripper_frame_link`, đầu hàm cách sàn 2 mm.
+- **Giới hạn độ cao khi gắp thẳng đứng:** `wrist_flex` chạm −90° khi TCP cao khoảng 7.5 cm, nên script di chuyển vật ở độ cao 6 cm.
 
 ## Ghi chú
 
